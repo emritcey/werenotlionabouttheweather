@@ -54,12 +54,28 @@ body {
 }
 
 /*Weather Page*/
+.weather-info-container {
+  display: flex;
+  width: 900px;
+  flex-wrap: wrap;
+}
+
 .weather-info {
-  display: block;
-  width: 25%
+  display: inline-block;
+  width: 300px;
+  height: 300px;
   text-align: center;
-  border: 1px solid black;
-  margin
+  background: black;
+  color: white;
+  opacity: .5;
+  margin: 70px;
+  font-size: 3em;
+}
+
+img {
+  height: 1000px;
+  margin-left: 200px;
+  position: absolute;
 }
 
 
