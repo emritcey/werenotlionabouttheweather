@@ -1,0 +1,16 @@
+<div class="user-container">
+  <% if @errors %>
+ 	<p class="errors "><%= @errors %></p>
+  <% end %>
+
+  <form  class="button" action="/login" method="post">
+    <input type="text" name="user[username]" placeholder="username"> <br>
+    <input type="password" name="user[password]" placeholder="*********"> <br>
+    <input id="enter-button" class="button" type="submit" value="Log in">
+  </form>
+</div>
+
+<div class="user-container">
+  <p id="linktosignup">Don't have an account? <a href="/users/new">Sign up</a></p>
+</div>
+
