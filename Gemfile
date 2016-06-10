@@ -12,6 +12,7 @@ gem 'activerecord', '~>4.2.0'
 
 gem 'rake'
 gem 'bcrypt'
+gem 'twilio-ruby'
 
 gem 'shotgun'
 gem 'open-weather'
