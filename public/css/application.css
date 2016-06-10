@@ -72,15 +72,14 @@ body {
   font-size: 3em;
 }
 
-img {
-  height: 1000px;
-  margin-left: 200px;
+
+
+#text-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
 }
-
-
-
-
 
 
 

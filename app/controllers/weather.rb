@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'twilio-ruby'
+
 post '/weather' do
   city = params[:city].gsub(/,*\s+/, "")
   p city
@@ -6,28 +9,34 @@ end
 
 get '/weather/:city' do
   @city = params[:city]
-  options = {units: "imperial", APPID: "ade7879e25da1c374b2251a167451a1a" }
+  options = {units: "imperial", APPID: "*************************" }
   @weather = OpenWeather::Current.city(@city, options)
   erb :show
 end
 
 
 post '/weather/:city/text' do
-  city = params[:city]
-  to = params[:to]
-  lion = choose_photo(@weather)
-  options = {units: "imperial", APPID: "ade7879e25da1c374b2251a167451a1a"}
+  @city = params[:city]
+  to = params[:to].gsub("-", "").gsub("\s", "")
+  options = {units: "imperial", APPID: "*************************"}
   @weather = OpenWeather::Current.city(@city, options)
 
-  account_sid = 'AC5486bfc14c098eaec4f0b81119d197f5'
-  auth_token = '7f91d84504667848c42f76def0ef79c3'
+  conditions = @weather["main"]["temp"]
+  high = @weather["main"]["temp_max"]
+  low = @weather["main"]["temp_min"]
+
+  lion = choose_photo(@weather)
+
+  account_sid = "*********************************"
+  auth_token = "*********************************"
   @client = Twilio::REST::Client.new account_sid, auth_token
 
   @client.account.messages.create({
-    from: "",
-    to: "#{to}",
-    body: "It is #{weather[0]["main"]} in #{city} with a temperature of #{weather[0]["temp"]}.",
+    body: "------------------------- It is #{conditions} degrees in #{@city}. With a high of #{high} degrees and a low of #{low}. We aren't lion.",
+    to: "+#{to}",
+    from: "+12513336060",
     media_url: "#{lion}"
-  })
+  }).status
 
+  redirect '/'
 end

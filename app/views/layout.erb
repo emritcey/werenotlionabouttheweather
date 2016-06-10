@@ -17,7 +17,12 @@
 
   <title></title>
 </head>
-<body>
+<% if @weather %>
+  <body style="background-image: url(<%= choose_photo(@weather) %>); background-size: 100%;">
+<% else  %>
+  <body>
+<% end  %>
+
 
 <div class="login-bar">
 <% if logged_in? %>

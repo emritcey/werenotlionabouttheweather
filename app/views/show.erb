@@ -1,6 +1,5 @@
-<img src="<%= choose_photo(@weather) %>"/>
-
 <div class='container'>
+
   <div class="weather-info-container">
       <% if @weather %>
 
@@ -13,4 +12,12 @@
         <span class="weather-info"><p>High:</p><%=@weather["main"]["temp_max"]  %>°</span>
       <% end %>
   </div>
+
+  <form id="text-message" action="/weather/<%=@city%>/text" method="post">
+  <input type="text" placeholder="17079710068" name="to"><br>
+  <input type="submit" value="Send Message to a Friend">
+  </form>
+
 </div>
+
+
