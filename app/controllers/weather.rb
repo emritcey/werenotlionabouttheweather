@@ -10,3 +10,8 @@ get '/weather/:city' do
   @weather = OpenWeather::Current.city(@city, options)
   erb :show
 end
+
+
+post '/weather/text' do
+
+end
