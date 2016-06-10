@@ -1,4 +1,4 @@
-helpers do 
+helpers do
 	def logged_in?
 	  session[:user_id] != nil
 	end
@@ -10,4 +10,4 @@ helpers do
 	def authenticate!
 	  redirect '/login' unless logged_in?
 	end
-end 
+end

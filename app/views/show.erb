@@ -1,14 +1,4 @@
-<% if @weather['weather'][0]['main'] == 'Rain' %>
-  <img src ="<%=rain%>"/>
-<% elsif @weather['weather'][0]['main'] == 'Clear' %>
-  <img src ="<%=clear%>"/>
-<% elsif @weather['weather'][0]['main'] == 'Snow' %>
-  <img src ="<%=snow%>"/>
-<% elsif @weather['weather'][0]['main'] == 'Clouds' %>
-  <img src ="<%=clouds%>"/>
-<% else %>
-  <img src ="<%=clear%>"/>
-<% end %>
+<img src="<%= choose_photo(@weather) %>"/>
 
 <div class='container'>
   <div class="weather-info-container">
@@ -22,5 +12,5 @@
 
         <span class="weather-info"><p>High:</p><%=@weather["main"]["temp_max"]  %>°</span>
       <% end %>
-</div>
+  </div>
 </div>
