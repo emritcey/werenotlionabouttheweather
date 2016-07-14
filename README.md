@@ -2,7 +2,7 @@
 
 Solving the important issue of a severe lack of lions. 
 
-This application takes a user's inputed location and returns weather information along with an image of a lion in the appropriate conditions. It also gives the option to text this information, location, and lion image to a friend! 
+This application takes a user's location and returns weather information along with an image of a lion in the appropriate conditions. It also gives the option to text this information and lion image to a friend. 
 
 
 Dev Bootcamp project for experimentation with APIs and utilizes the OpenWeatherMap and Twillio APIs. 
